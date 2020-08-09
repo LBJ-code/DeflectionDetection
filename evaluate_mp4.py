@@ -37,13 +37,13 @@ if __name__ == '__main__':
             Is_estimated_moving = determiner(prev_frame, cur_frame)
             prev_frame = cur_frame.copy()
 
-        cv2.putText(show_frame, "Is_moving=", (10, 30), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+        # cv2.putText(show_frame, "Is_moving=", (10, 30), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
         if Is_estimated_moving:
             direction = "forward" if determiner.cur_best_level <= 2 else "backward"
-            cv2.putText(show_frame, f"True({direction})", (210, 30), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 255, 0), 1,
-                        cv2.LINE_AA)
-        else:
-            cv2.putText(show_frame, "False", (210, 30), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 255), 1, cv2.LINE_AA)
+            #cv2.putText(show_frame, f"True({direction})", (210, 30), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 255, 0), 1,
+            #            cv2.LINE_AA)
+        #else:
+            #cv2.putText(show_frame, "False", (210, 30), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 255), 1, cv2.LINE_AA)
         cv2.imshow("evaluation", show_frame)
         out.write(show_frame)
         cv2.waitKey(1)

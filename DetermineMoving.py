@@ -19,7 +19,8 @@ class DetermineMoving:
 
     def create_img_pyramid(self, frame):
         # この辺は適切なサイズを選ぶ
-        resize_ratio_list = [10 / 8, 9 / 8, 1, 7 / 8, 6 / 8]
+        # resize_ratio_list = [10 / 8, 9 / 8, 1, 7 / 8, 6 / 8]
+        resize_ratio_list = [12/10, 11/10, 1, 15/16, 14/16]
         h, w, c = frame.shape
         return_pyramid_img_list = list()
 
