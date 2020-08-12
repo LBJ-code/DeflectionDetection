@@ -62,6 +62,10 @@ class DetermineMoving:
         best_ssim = -1
         f = open("result.csv", "w")
         f.write("level,ssim\n")
+
+        cv2.imshow("cur", cur_frame)
+        cv2.imshow("prev", prev_pyramid_frame_list[0])
+        print(cur_frame.shape)
         for i, resized_prev_frame in enumerate(prev_pyramid_frame_list):
             cur_level = i + 1
             # リサイズ後の方が小さいとき
